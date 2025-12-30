@@ -5,7 +5,7 @@ const kSecondaryColor = 0xFF8B5CF6; // Violet 500
 const kTextColor = 0xFF1E293B; // Slate 800
 const kSubTextColor = 0xFF64748B; // Slate 500
 
-const resumeData = ResumeData(
+const resumeDataZh = ResumeData(
   name: "林小明 (Alex Lin)",
   title: "資深全端工程師 / AI 應用開發者",
   bio: "擁有超過 5 年的 Web 開發經驗，專注於 React 生態系與生成式 AI 的整合應用。熱衷於打造直觀且具備影響力的使用者體驗，並持續探索新技術與產品化的可能性。",
@@ -78,3 +78,80 @@ const resumeData = ResumeData(
     ),
   ],
 );
+
+const resumeDataEn = ResumeData(
+  name: "Alex Lin",
+  title: "Senior Full Stack Engineer / AI App Developer",
+  bio: "With over 5 years of web development experience, focusing on the React ecosystem and Generative AI integration. Passionate about building intuitive and impactful user experiences and continuously exploring new technologies.",
+  email: "alex.lin.dev@example.com",
+  phone: "+886 912 345 678",
+  location: "Taipei, Taiwan",
+  linkedin: "linkedin.com/in/alexlin",
+  github: "github.com/alexlin-dev",
+  skills: [
+    Skill(name: "React / Next.js", level: 95, category: "Frontend"),
+    Skill(name: "TypeScript", level: 90, category: "Frontend"),
+    Skill(name: "Tailwind CSS", level: 92, category: "Frontend"),
+    Skill(name: "Node.js / NestJS", level: 85, category: "Backend"),
+    Skill(name: "PostgreSQL / MongoDB", level: 80, category: "Backend"),
+    Skill(name: "Gemini / OpenAI API", level: 88, category: "Tools"),
+    Skill(name: "Docker / AWS", level: 75, category: "Tools"),
+    Skill(name: "Project Management", level: 85, category: "Soft Skills"),
+    Skill(name: "Cross-team Comm", level: 90, category: "Soft Skills"),
+  ],
+  experiences: [
+    Experience(
+      id: "exp1",
+      company: "Future Tech Inc.",
+      role: "Senior Frontend Engineer",
+      period: "2021 - Present",
+      description: [
+        "Led the development of flagship SaaS platform, improving page load speed by 40%.",
+        "Introduced AI-assisted workflow, reducing code review time by 25%.",
+        "Established internal UI component library, saving 30% development effort across projects.",
+      ],
+      skills: ["React", "TypeScript", "Micro-frontend", "Jenkins"],
+    ),
+    Experience(
+      id: "exp2",
+      company: "Innovate Digital",
+      role: "Full Stack Engineer",
+      period: "2018 - 2021",
+      description: [
+        "Developed high-traffic e-commerce platform supporting 100k daily concurrent visits.",
+        "Optimized backend API design, improving data query efficiency by 60%.",
+        "Assisted in 0-to-1 product launch, reaching 50k MAU within a year.",
+      ],
+      skills: ["Node.js", "Express", "Vue.js", "PostgreSQL"],
+    ),
+  ],
+  projects: [
+    Project(
+      id: "p1",
+      title: "AI Interview Assistant",
+      description: "Mock interview platform based on Gemini API, providing real-time audio feedback and scoring.",
+      image: "https://picsum.photos/seed/ai-interview/800/450",
+      tags: ["React", "Gemini API", "Web Audio API"],
+      link: "#",
+    ),
+    Project(
+      id: "p2",
+      title: "Distributed Kanban",
+      description: "Real-time collaborative project management tool with visual data analytics.",
+      image: "https://picsum.photos/seed/kanban/800/450",
+      tags: ["Next.js", "Socket.io", "D3.js"],
+      link: "#",
+    ),
+    Project(
+      id: "p3",
+      title: "Logistics Tracker",
+      description: "Cross-border parcel tracking with visual map display, integrating multiple courier APIs.",
+      image: "https://picsum.photos/seed/logistics/800/450",
+      tags: ["Google Maps API", "NestJS", "Tailwind"],
+      link: "#",
+    ),
+  ],
+);
+
+// Backward compatibility or default
+const resumeData = resumeDataZh;

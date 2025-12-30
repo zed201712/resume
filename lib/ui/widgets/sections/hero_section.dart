@@ -1,7 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../providers/language_provider.dart';
 import '../../../utils/constants.dart';
 
 class HeroSection extends StatelessWidget {
@@ -9,6 +12,8 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final resumeData = context.watch<LanguageProvider>().getResumeData(context);
+
     return LayoutBuilder(
       builder: (context, constraints) {
         final isMobile = constraints.maxWidth < 768;
@@ -38,7 +43,7 @@ class HeroSection extends StatelessWidget {
                           const Icon(LucideIcons.sparkles, size: 12, color: Color(kPrimaryColor)),
                           const SizedBox(width: 8),
                           Text(
-                            "開放職缺接洽中",
+                            "heroAvailable".tr(),
                             style: GoogleFonts.notoSansTc(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -59,7 +64,7 @@ class HeroSection extends StatelessWidget {
                           height: 1.1,
                         ),
                         children: [
-                          const TextSpan(text: "你好，我是 "),
+                          TextSpan(text: "${"heroHello".tr()} "),
                           TextSpan(
                             text: resumeData.name,
                             style: const TextStyle(
@@ -97,7 +102,7 @@ class HeroSection extends StatelessWidget {
                             // Mock Download
                           },
                           icon: const Icon(LucideIcons.fileText, size: 20),
-                          label: const Text("下載 PDF 履歷"),
+                          label: Text("heroDownloadResume".tr()),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF0F172A), // Slate 900
                             foregroundColor: Colors.white,

@@ -1,6 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:provider/provider.dart';
+import '../../providers/language_provider.dart';
 import '../../utils/constants.dart';
 import '../widgets/ai_assistant_widget.dart';
 import '../widgets/sections/contact_section.dart';
@@ -42,6 +45,8 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final resumeData = context.watch<LanguageProvider>().getResumeData(context);
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -80,7 +85,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "© 2024 ${resumeData.name}. Built with Flutter & Gemini.",
+                              "footerBuiltWith".tr(namedArgs: {"name": resumeData.name}),
                               style: GoogleFonts.notoSansTc(
                                 fontSize: 14,
                                 color: const Color(kSubTextColor),
@@ -120,7 +125,6 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.8),
                 border: const Border(bottom: BorderSide(color: Color(0xFFE2E8F0))),
-                // BackdropFilter for blur effect requires ClipRect or similar, usually done with ClipRect(child: BackdropFilter(...))
               ),
               child: ClipRect(
                   child: Center(
@@ -151,10 +155,10 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                             if (MediaQuery.of(context).size.width >= 768)
                               Row(
                                 children: [
-                                  _NavButton(title: "關於我", onTap: () => _scrollToSection(_heroKey)),
-                                  _NavButton(title: "核心技術", onTap: () => _scrollToSection(_skillsKey)),
-                                  _NavButton(title: "工作經歷", onTap: () => _scrollToSection(_experienceKey)),
-                                  _NavButton(title: "專案展示", onTap: () => _scrollToSection(_projectsKey)),
+                                  _NavButton(title: "navAbout".tr(), onTap: () => _scrollToSection(_heroKey)),
+                                  _NavButton(title: "navSkills".tr(), onTap: () => _scrollToSection(_skillsKey)),
+                                  _NavButton(title: "navExperience".tr(), onTap: () => _scrollToSection(_experienceKey)),
+                                  _NavButton(title: "navProjects".tr(), onTap: () => _scrollToSection(_projectsKey)),
                                   const SizedBox(width: 16),
                                   ElevatedButton(
                                     onPressed: () => _scrollToSection(_contactKey),
@@ -166,8 +170,10 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                                       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                                       textStyle: GoogleFonts.notoSansTc(fontWeight: FontWeight.w500),
                                     ),
-                                    child: const Text("聯繫我"),
+                                    child: Text("navContact".tr()),
                                   ),
+                                  const SizedBox(width: 16),
+                                  _LanguageSwitcher(),
                                 ],
                               ),
                           ],
@@ -203,6 +209,79 @@ class _NavButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
       ),
       child: Text(title),
+    );
+  }
+}
+
+class _LanguageSwitcher extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFFF1F5F9), // Slate 100
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _LangButton(
+            locale: const Locale('zh'),
+            label: '中文',
+            isSelected: context.locale.languageCode == 'zh',
+          ),
+          _LangButton(
+            locale: const Locale('en'),
+            label: 'EN',
+            isSelected: context.locale.languageCode == 'en',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LangButton extends StatelessWidget {
+  final Locale locale;
+  final String label;
+  final bool isSelected;
+
+  const _LangButton({
+    required this.locale,
+    required this.label,
+    required this.isSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        context.setLocale(locale);
+      },
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.white : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.05),
+                    blurRadius: 2,
+                    offset: const Offset(0, 1),
+                  ),
+                ]
+              : null,
+        ),
+        child: Text(
+          label,
+          style: GoogleFonts.notoSansTc(
+            fontSize: 12,
+            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+            color: isSelected ? const Color(kPrimaryColor) : const Color(kSubTextColor),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -2,13 +2,19 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 import '../../../utils/constants.dart';
+import '../../../providers/language_provider.dart';
+import '../../../models/resume_model.dart';
 
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final resumeData = context.watch<LanguageProvider>().getResumeData(context);
+
     return LayoutBuilder(
       builder: (context, constraints) {
         final isMobile = constraints.maxWidth < 768;
@@ -31,7 +37,7 @@ class SkillsSection extends StatelessWidget {
                   ),
                   const SizedBox(width: 12),
                   Text(
-                    "核心技術棧",
+                    tr('skillsTitle'),
                     style: GoogleFonts.notoSansTc(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -75,7 +81,7 @@ class SkillsSection extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "技術掌握度",
+                            tr('skillsLevel'),
                             style: GoogleFonts.notoSansTc(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -84,7 +90,7 @@ class SkillsSection extends StatelessWidget {
                           ),
                           const SizedBox(height: 24),
                           Expanded(
-                            child: _SkillsChartVertical(),
+                            child: _SkillsChartVertical(skills: resumeData.skills),
                           ),
                         ],
                       ),
@@ -100,6 +106,15 @@ class SkillsSection extends StatelessWidget {
                       spacing: 16,
                       runSpacing: 16,
                       children: ['Frontend', 'Backend', 'Tools', 'Soft Skills'].map((category) {
+                        String titleKey;
+                        switch (category) {
+                          case 'Frontend': titleKey = 'skillsFrontend'; break;
+                          case 'Backend': titleKey = 'skillsBackend'; break;
+                          case 'Tools': titleKey = 'skillsTools'; break;
+                          case 'Soft Skills': titleKey = 'skillsSoftSkills'; break;
+                          default: titleKey = category;
+                        }
+
                         return Container(
                           width: isMobile ? double.infinity : (constraints.maxWidth - 48) / 2 - 16, 
                           // Simple calculation for 2 columns in desktop part of Flex
@@ -114,7 +129,7 @@ class SkillsSection extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                category,
+                                tr(titleKey),
                                 style: GoogleFonts.notoSansTc(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -170,9 +185,13 @@ extension ListFilter<T> on List<T> {
 }
 
 class _SkillsChartVertical extends StatelessWidget {
+  final List<Skill> skills;
+
+  const _SkillsChartVertical({required this.skills});
+
   @override
   Widget build(BuildContext context) {
-    final data = resumeData.skills
+    final data = skills
         .filter((s) => s.category != 'Soft Skills')
         .take(6)
         .toList();

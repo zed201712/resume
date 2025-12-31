@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 import '../../../utils/constants.dart';
+import '../../../providers/language_provider.dart';
+import '../../../models/resume_model.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final resumeData = context.watch<LanguageProvider>().getResumeData(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Column(
@@ -26,7 +32,7 @@ class ContactSection extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Text(
-                "取得聯繫",
+                tr('contactTitle'),
                 style: GoogleFonts.notoSansTc(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -73,13 +79,6 @@ class ContactSection extends StatelessWidget {
                       color: const Color(0xFF6366F1).withOpacity(0.5), // Indigo 500
                       shape: BoxShape.circle,
                     ),
-                    child: const DecoratedBox(
-                      decoration: BoxDecoration(
-                         // blur effect is complex in standard widgets, using opacity instead for simplicity or BackdropFilter if needed
-                         // but BackdropFilter applies to what's behind.
-                         // Here we just use opacity for visual approximation.
-                      ),
-                    ),
                   ),
                 ),
                  Positioned(
@@ -110,7 +109,7 @@ class ContactSection extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "準備好開始新專案了嗎？",
+                                tr('contactSubtitle'),
                                 style: GoogleFonts.notoSansTc(
                                   fontSize: 32, // text-4xl
                                   fontWeight: FontWeight.bold,
@@ -119,7 +118,7 @@ class ContactSection extends StatelessWidget {
                               ),
                               const SizedBox(height: 24),
                               Text(
-                                "如果您有合作意向，或者只是想聊聊技術，歡迎隨時透過電子郵件或社群媒體聯繫我。",
+                                tr('contactDescription'),
                                 style: GoogleFonts.notoSansTc(
                                   fontSize: 18,
                                   color: const Color(0xFFE0E7FF), // Indigo 100
@@ -128,13 +127,13 @@ class ContactSection extends StatelessWidget {
                               const SizedBox(height: 40),
                               _ContactInfoItem(
                                 icon: LucideIcons.mail,
-                                label: "EMAIL ME",
+                                label: tr('contactEmailLabel'),
                                 value: resumeData.email,
                               ),
                               const SizedBox(height: 24),
                               _ContactInfoItem(
                                 icon: LucideIcons.mapPin,
-                                label: "LOCATION",
+                                label: tr('contactLocationLabel'),
                                 value: resumeData.location,
                               ),
                               if (!isDesktop) const SizedBox(height: 40),
@@ -155,9 +154,16 @@ class ContactSection extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                _ContactInput(label: "姓名", placeholder: "您的姓名"),
+                                _ContactInput(
+                                  label: tr('contactFormName'),
+                                  placeholder: tr('contactFormNamePlaceholder'),
+                                ),
                                 const SizedBox(height: 24),
-                                _ContactInput(label: "您的需求", placeholder: "請描述您的合作需求...", maxLines: 4),
+                                _ContactInput(
+                                  label: tr('contactFormNeeds'),
+                                  placeholder: tr('contactFormNeedsPlaceholder'),
+                                  maxLines: 4,
+                                ),
                                 const SizedBox(height: 24),
                                 SizedBox(
                                   width: double.infinity,
@@ -165,7 +171,7 @@ class ContactSection extends StatelessWidget {
                                   child: ElevatedButton.icon(
                                     onPressed: () {},
                                     icon: const Icon(LucideIcons.send, size: 20),
-                                    label: const Text("發送訊息"),
+                                    label: Text(tr('contactButtonSend')),
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.white,
                                       foregroundColor: const Color(kPrimaryColor),

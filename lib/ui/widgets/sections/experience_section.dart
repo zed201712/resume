@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 import '../../../utils/constants.dart';
+import '../../../providers/language_provider.dart';
+import '../../../models/resume_model.dart';
 
 class ExperienceSection extends StatelessWidget {
   const ExperienceSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final resumeData = context.watch<LanguageProvider>().getResumeData(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Column(
@@ -26,7 +32,7 @@ class ExperienceSection extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Text(
-                "工作經歷",
+                tr('experienceTitle'),
                 style: GoogleFonts.notoSansTc(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -70,9 +76,7 @@ class ExperienceSection extends StatelessWidget {
 }
 
 class _ExperienceItem extends StatelessWidget {
-  final dynamic experience; // Using dynamic to avoid circular import or need explicit model import here if not globally available, but we use constants so it's fine. 
-  // Actually better to use the model.
-  // Assuming resumeData.experiences is List<Experience>
+  final Experience experience;
 
   const _ExperienceItem({required this.experience});
 

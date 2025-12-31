@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 import '../../../utils/constants.dart';
+import '../../../providers/language_provider.dart';
+import '../../../models/resume_model.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final resumeData = context.watch<LanguageProvider>().getResumeData(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Column(
@@ -27,7 +33,7 @@ class ProjectsSection extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Text(
-                "精選專案",
+                tr('projectsTitle'),
                 style: GoogleFonts.notoSansTc(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -79,7 +85,7 @@ class ProjectsSection extends StatelessWidget {
 }
 
 class _ProjectCard extends StatefulWidget {
-  final dynamic project; // Using dynamic for simplicity with constants, but prefer strict type.
+  final Project project;
 
   const _ProjectCard({required this.project});
 
@@ -142,18 +148,18 @@ class _ProjectCardState extends State<_ProjectCard> {
                       padding: const EdgeInsets.all(24),
                       child: InkWell(
                         onTap: () => launchUrl(Uri.parse(widget.project.link)),
-                        child: const Row(
+                        child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              "查看詳情",
-                              style: TextStyle(
+                              tr('projectsViewDetails'),
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(width: 8),
-                            Icon(LucideIcons.externalLink, color: Colors.white, size: 16),
+                            const SizedBox(width: 8),
+                            const Icon(LucideIcons.externalLink, color: Colors.white, size: 16),
                           ],
                         ),
                       ),

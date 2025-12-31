@@ -154,4 +154,5 @@ const resumeDataEn = ResumeData(
 );
 
 // Backward compatibility or default
+@Deprecated('Use LanguageProvider to get localized ResumeData')
 const resumeData = resumeDataZh;

@@ -105,7 +105,8 @@ class SkillsSection extends StatelessWidget {
                     child: Wrap(
                       spacing: 16,
                       runSpacing: 16,
-                      children: ['Frontend', 'Backend', 'Tools', 'Soft Skills'].map((category) {
+                      //children: ['Frontend', 'Backend', 'Tools', 'Soft Skills'].map((category) {
+                      children: ['Frontend', 'Backend', 'Tools'].map((category) {
                         String titleKey;
                         switch (category) {
                           case 'Frontend': titleKey = 'skillsFrontend'; break;

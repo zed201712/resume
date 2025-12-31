@@ -1,7 +1,7 @@
 根據 @firestore_message_controller_spec.md 生成程式碼
 _____
 
-用 @portfolio_localization_spec_002.md 的風格, 寫1個spec
+用 @portfolio_localization_spec_002.md 的風格, 寫1個spec, 並且產生spec的md檔案
 | **任務 ID (Task ID)** | `FEAT-PORTFOLIO-LOCALIZATION-002` |
 | **創建日期 (Date)** | `2025/12/30` |
 

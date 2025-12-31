@@ -11,6 +11,7 @@ import '../widgets/sections/experience_section.dart';
 import '../widgets/sections/hero_section.dart';
 import '../widgets/sections/projects_section.dart';
 import '../widgets/sections/skills_section.dart';
+import '../widgets/social_button.dart';
 
 class PortfolioHomePage extends StatefulWidget {
   const PortfolioHomePage({super.key});
@@ -70,8 +71,8 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       SizedBox(key: _experienceKey, child: const ExperienceSection()),
                       const SizedBox(height: 128),
                       SizedBox(key: _projectsKey, child: const ProjectsSection()),
-                      const SizedBox(height: 128),
-                      SizedBox(key: _contactKey, child: const ContactSection()),
+                      // const SizedBox(height: 128),
+                      // SizedBox(key: _contactKey, child: const ContactSection()),
                       
                       // Footer
                       const SizedBox(height: 160),
@@ -95,14 +96,18 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                             Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                IconButton(
-                                  onPressed: () {}, // Link handled in HeroSection already, just UI here
-                                  icon: const Icon(LucideIcons.github, size: 20, color: Color(0xFF94A3B8)),
+                                SocialButton(
+                                  icon: LucideIcons.github,
+                                  url: "https://${resumeData.github}",
                                 ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(LucideIcons.linkedin, size: 20, color: Color(0xFF94A3B8)),
-                                ),
+                                // IconButton(
+                                //   onPressed: () {}, // Link handled in HeroSection already, just UI here
+                                //   icon: const Icon(LucideIcons.github, size: 20, color: Color(0xFF94A3B8)),
+                                // ),
+                                // IconButton(
+                                //   onPressed: () {},
+                                //   icon: const Icon(LucideIcons.linkedin, size: 20, color: Color(0xFF94A3B8)),
+                                // ),
                               ],
                             ),
                           ],
@@ -159,19 +164,19 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                                   _NavButton(title: "navSkills".tr(), onTap: () => _scrollToSection(_skillsKey)),
                                   _NavButton(title: "navExperience".tr(), onTap: () => _scrollToSection(_experienceKey)),
                                   _NavButton(title: "navProjects".tr(), onTap: () => _scrollToSection(_projectsKey)),
-                                  const SizedBox(width: 16),
-                                  ElevatedButton(
-                                    onPressed: () => _scrollToSection(_contactKey),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: const Color(kPrimaryColor),
-                                      foregroundColor: Colors.white,
-                                      elevation: 2,
-                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-                                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                                      textStyle: GoogleFonts.notoSansTc(fontWeight: FontWeight.w500),
-                                    ),
-                                    child: Text("navContact".tr()),
-                                  ),
+                                  // const SizedBox(width: 16),
+                                  // ElevatedButton(
+                                  //   onPressed: () => _scrollToSection(_contactKey),
+                                  //   style: ElevatedButton.styleFrom(
+                                  //     backgroundColor: const Color(kPrimaryColor),
+                                  //     foregroundColor: Colors.white,
+                                  //     elevation: 2,
+                                  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                                  //     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                  //     textStyle: GoogleFonts.notoSansTc(fontWeight: FontWeight.w500),
+                                  //   ),
+                                  //   child: Text("navContact".tr()),
+                                  // ),
                                   const SizedBox(width: 16),
                                   _LanguageSwitcher(),
                                 ],
@@ -186,7 +191,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           ),
 
           // AI Assistant
-          const AiAssistantWidget(),
+          //const AiAssistantWidget(),
         ],
       ),
     );

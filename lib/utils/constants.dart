@@ -8,12 +8,12 @@ const kSubTextColor = 0xFF64748B; // Slate 500
 const resumeDataZh = ResumeData(
   name: "大川大一 (Taichi Okawa)",
   title: "資深App工程師",
-  bio: "台灣宜蘭出身, 2024年取得日本國籍。資訊工程系畢業, 在BIOS開發一年後, 轉換跑道進行App開發。此後8年期間 在iOS（Swift + UIKit / SwiftUI）開發累積相關經驗。以及3年的Android相關開發經驗。在目前的工作在職７年, 專案的程式碼行數１５萬左右, 負責開發 / 維護, 精通從整體架構的理解到細節的實作。雖然主要負責前端開發。 但也負責的後端部分開發, 使用PHP / Oracle 資料庫的開發 / 測試。擁有理解並設計開發整體系統的相關經驗。",
+  bio: "台灣宜蘭出身, 2024年取得日本國籍。\n資訊工程系畢業, 在BIOS開發1年後, 轉換跑道進行App開發。\n此後8年期間 在iOS（Swift + UIKit / SwiftUI）開發累積相關經驗, 以及3年的Android相關開發經驗。\n在目前的工作在職７年, 負責開發 / 維護, 精通從整體架構的理解到細節的實作。\n雖然主要負責前端開發。 但也負責的後端部分開發, 使用PHP / Oracle 資料庫的開發 / 測試。擁有理解並設計開發整體系統的相關經驗。",
   email: "",
   phone: "",
   location: "台北市, 台灣",
-  linkedin: "linkedin.com/in/alexlin",
-  github: "github.com/alexlin-dev",
+  linkedin: "",
+  github: "github.com/zed201712",
   skills: [
     Skill(name: "iOS (Swift/UIKit)", level: 95, category: "Frontend"),
     Skill(name: "SwiftUI", level: 70, category: "Frontend"),
@@ -22,9 +22,9 @@ const resumeDataZh = ResumeData(
     Skill(name: "Objective-C", level: 60, category: "Frontend"),
     Skill(name: "PHP", level: 80, category: "Backend"),
     Skill(name: "Oracle DB", level: 75, category: "Backend"),
-    Skill(name: "Bash Script", level: 60, category: "Tools"),
     Skill(name: "Git / GitLab", level: 90, category: "Tools"),
     Skill(name: "CI/CD (DeployGate)", level: 85, category: "Tools"),
+    Skill(name: "Bash Script", level: 60, category: "Tools"),
   ],
   experiences: [
     Experience(
@@ -68,11 +68,11 @@ const resumeDataZh = ResumeData(
   projects: [
     Project(
       id: "p1",
-      title: "跨平台整合系統",
-      description: "基於 Swift 與 Kotlin 的行動端應用，整合 PHP 後端與 Oracle 資料庫，支援高複雜度的業務邏輯。",
-      image: "https://picsum.photos/seed/mobile-sys/800/450",
-      tags: ["Swift", "Kotlin", "PHP", "Oracle"],
-      link: "#",
+      title: "線上多人紙牌遊戲",
+      description: "基於 AI開發的 Flutter 的手機端應用，以Android Studio + gemini 用AI實作了90%以上的程式碼的多人紙牌遊戲。",
+      image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
+      tags: ["Flutter", "Dart", "Gemini"],
+      link: "https://zed201712.github.io/ok_multipl_poker/",
     ),
     // Project(
     //   id: "p2",
@@ -88,12 +88,12 @@ const resumeDataZh = ResumeData(
 const resumeDataEn = ResumeData(
   name: "Taichi Okawa",
   title: "Senior Mobile Engineer",
-  bio: "Born in Yilan, Taiwan, acquired Japanese nationality in 2024. Graduated in Computer Science. After a year of BIOS development, switched to App development. Since then, accumulated 8 years of experience in iOS (Swift + UIKit / SwiftUI) and 3 years in Android development. Currently in the role for 7 years, managing a codebase of ~150k lines, covering everything from architecture to implementation details. While primarily a frontend developer, also experienced in backend development using PHP and Oracle DB. Proficient in understanding and designing entire system architectures.",
+  bio: "Born in Yilan, Taiwan, acquired Japanese nationality in 2024.\nGraduated from Computer Science Dept. After 1 year of BIOS development, switched to App development.\nSince then, accumulated 8 years of experience in iOS (Swift + UIKit / SwiftUI) development, and 3 years of Android development experience.\nIn the current job for 7 years, responsible for development/maintenance, proficient from understanding the overall architecture to detailed implementation.\nAlthough primarily responsible for frontend development, also in charge of backend development, using PHP / Oracle Database for development/testing. Experienced in understanding and designing the development of entire systems.",
   email: "",
   phone: "",
   location: "Taipei, Taiwan",
-  linkedin: "linkedin.com/in/alexlin",
-  github: "github.com/alexlin-dev",
+  linkedin: "",
+  github: "github.com/zed201712",
   skills: [
     Skill(name: "iOS (Swift/UIKit)", level: 95, category: "Frontend"),
     Skill(name: "SwiftUI", level: 70, category: "Frontend"),
@@ -102,9 +102,9 @@ const resumeDataEn = ResumeData(
     Skill(name: "Objective-C", level: 60, category: "Frontend"),
     Skill(name: "PHP", level: 80, category: "Backend"),
     Skill(name: "Oracle DB", level: 75, category: "Backend"),
-    Skill(name: "Bash Script", level: 60, category: "Tools"),
     Skill(name: "Git / GitLab", level: 90, category: "Tools"),
     Skill(name: "CI/CD (DeployGate)", level: 85, category: "Tools"),
+    Skill(name: "Bash Script", level: 60, category: "Tools"),
   ],
   experiences: [
     Experience(
@@ -148,11 +148,11 @@ const resumeDataEn = ResumeData(
   projects: [
     Project(
       id: "p1",
-      title: "Integrated Mobile System",
-      description: "Mobile application based on Swift and Kotlin, integrated with PHP backend and Oracle DB, supporting complex business logic.",
-      image: "https://picsum.photos/seed/mobile-sys/800/450",
-      tags: ["Swift", "Kotlin", "PHP", "Oracle"],
-      link: "#",
+      title: "Online Multiplayer Card Game",
+      description: "AI-based Flutter mobile application. Used Android Studio + Gemini to implement over 90% of the code for this multiplayer card game using AI.",
+      image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
+      tags: ["Flutter", "Dart", "Gemini"],
+      link: "https://zed201712.github.io/ok_multipl_poker/",
     ),
   ],
 );
@@ -160,12 +160,12 @@ const resumeDataEn = ResumeData(
 const resumeDataJa = ResumeData(
   name: "大川大一 (Taichi Okawa)",
   title: "シニアモバイルエンジニア",
-  bio: "台湾宜蘭出身、2024年に日本国籍を取得。情報工学科卒。BIOS開発を1年経験した後、アプリ開発へ転向。その後8年間、iOS（Swift + UIKit / SwiftUI）開発の経験を積み、Android開発も3年の経験があります。現職には7年在籍し、約15万行のコード規模のプロジェクトにおいて、開発・保守を担当。全体アーキテクチャの理解から詳細実装まで精通しています。主にフロントエンド開発を担当していますが、バックエンド開発も担当しており、PHP / Oracleデータベースを用いた開発・テストを行っています。システム全体の設計・開発を理解し、担当した経験を持っています。",
+  bio: "台湾・宜蘭出身、2024年に日本国籍を取得。\n情報工学科を卒業後、BIOS開発を1年経験し、アプリ開発へ転向。\nその後8年間、iOS（Swift + UIKit / SwiftUI）開発の経験を積み、3年間のAndroid開発経験もあります。\n現職には7年在籍し、開発・保守を担当。全体アーキテクチャの理解から詳細な実装まで精通しています。\n主にフロントエンド開発を担当していますが、バックエンド開発も担当しており、PHP / Oracleデータベースを使用した開発・テストを行っています。システム全体の設計・開発を理解し、携わった経験があります。",
   email: "",
   phone: "",
-  location: "台湾、台北市",
-  linkedin: "linkedin.com/in/alexlin",
-  github: "github.com/alexlin-dev",
+  location: "台湾・台北",
+  linkedin: "",
+  github: "github.com/zed201712",
   skills: [
     Skill(name: "iOS (Swift/UIKit)", level: 95, category: "Frontend"),
     Skill(name: "SwiftUI", level: 70, category: "Frontend"),
@@ -174,9 +174,9 @@ const resumeDataJa = ResumeData(
     Skill(name: "Objective-C", level: 60, category: "Frontend"),
     Skill(name: "PHP", level: 80, category: "Backend"),
     Skill(name: "Oracle DB", level: 75, category: "Backend"),
-    Skill(name: "Bash Script", level: 60, category: "Tools"),
     Skill(name: "Git / GitLab", level: 90, category: "Tools"),
     Skill(name: "CI/CD (DeployGate)", level: 85, category: "Tools"),
+    Skill(name: "Bash Script", level: 60, category: "Tools"),
   ],
   experiences: [
     Experience(
@@ -220,11 +220,11 @@ const resumeDataJa = ResumeData(
   projects: [
     Project(
       id: "p1",
-      title: "クロスプラットフォーム統合システム",
-      description: "SwiftとKotlinをベースにしたモバイルアプリで、PHPバックエンドとOracle DBを統合し、複雑な業務ロジックをサポート。",
-      image: "https://picsum.photos/seed/mobile-sys/800/450",
-      tags: ["Swift", "Kotlin", "PHP", "Oracle"],
-      link: "#",
+      title: "オンラインマルチプレイヤーカードゲーム",
+      description: "AIベースで開発されたFlutterモバイルアプリ。Android Studio + Geminiを使用し、コードの90%以上をAIによって実装したマルチプレイヤーカードゲームです。",
+      image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
+      tags: ["Flutter", "Dart", "Gemini"],
+      link: "https://zed201712.github.io/ok_multipl_poker/",
     ),
   ],
 );

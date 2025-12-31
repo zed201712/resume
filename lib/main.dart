@@ -31,7 +31,7 @@ class ResumeApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => LanguageProvider()),
       ],
       child: MaterialApp(
-        title: 'AI-Powered Portfolio',
+        title: 'Resume',
         debugShowCheckedModeBanner: false,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,

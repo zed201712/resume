@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../providers/language_provider.dart';
 import '../../../utils/constants.dart';
+import '../social_button.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -30,31 +31,31 @@ class HeroSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: const Color(kPrimaryColor).withOpacity(0.05),
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: const Color(kPrimaryColor).withOpacity(0.1)),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(LucideIcons.sparkles, size: 12, color: Color(kPrimaryColor)),
-                          const SizedBox(width: 8),
-                          Text(
-                            "heroAvailable".tr(),
-                            style: GoogleFonts.notoSansTc(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: const Color(kPrimaryColor),
-                              letterSpacing: 1,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 24),
+                    // Container(
+                    //   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    //   decoration: BoxDecoration(
+                    //     color: const Color(kPrimaryColor).withOpacity(0.05),
+                    //     borderRadius: BorderRadius.circular(20),
+                    //     border: Border.all(color: const Color(kPrimaryColor).withOpacity(0.1)),
+                    //   ),
+                    //   child: Row(
+                    //     mainAxisSize: MainAxisSize.min,
+                    //     children: [
+                    //       const Icon(LucideIcons.sparkles, size: 12, color: Color(kPrimaryColor)),
+                    //       const SizedBox(width: 8),
+                    //       Text(
+                    //         "heroAvailable".tr(),
+                    //         style: GoogleFonts.notoSansTc(
+                    //           fontSize: 12,
+                    //           fontWeight: FontWeight.bold,
+                    //           color: const Color(kPrimaryColor),
+                    //           letterSpacing: 1,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    //const SizedBox(height: 24),
                     RichText(
                       text: TextSpan(
                         style: GoogleFonts.notoSansTc(
@@ -92,35 +93,35 @@ class HeroSection extends StatelessWidget {
                         height: 1.6,
                       ),
                     ),
-                    const SizedBox(height: 32),
-                    Wrap(
-                      spacing: 16,
-                      runSpacing: 16,
-                      children: [
-                        ElevatedButton.icon(
-                          onPressed: () {
-                            // Mock Download
-                          },
-                          icon: const Icon(LucideIcons.fileText, size: 20),
-                          label: Text("heroDownloadResume".tr()),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF0F172A), // Slate 900
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            textStyle: GoogleFonts.notoSansTc(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        _SocialButton(
-                          icon: LucideIcons.github,
-                          url: "https://${resumeData.github}",
-                        ),
-                        _SocialButton(
-                          icon: LucideIcons.linkedin,
-                          url: "https://${resumeData.linkedin}",
-                        ),
-                      ],
-                    ),
+                    // const SizedBox(height: 32),
+                    // Wrap(
+                    //   spacing: 16,
+                    //   runSpacing: 16,
+                    //   children: [
+                    //     ElevatedButton.icon(
+                    //       onPressed: () {
+                    //         // Mock Download
+                    //       },
+                    //       icon: const Icon(LucideIcons.fileText, size: 20),
+                    //       label: Text("heroDownloadResume".tr()),
+                    //       style: ElevatedButton.styleFrom(
+                    //         backgroundColor: const Color(0xFF0F172A), // Slate 900
+                    //         foregroundColor: Colors.white,
+                    //         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                    //         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    //         textStyle: GoogleFonts.notoSansTc(fontWeight: FontWeight.bold),
+                    //       ),
+                    //     ),
+                    //     SocialButton(
+                    //       icon: LucideIcons.github,
+                    //       url: "https://${resumeData.github}",
+                    //     ),
+                    //     SocialButton(
+                    //       icon: LucideIcons.linkedin,
+                    //       url: "https://${resumeData.linkedin}",
+                    //     ),
+                    //   ],
+                    // ),
                   ],
                 ),
               ),
@@ -157,7 +158,7 @@ class HeroSection extends StatelessWidget {
                           ),
                         ],
                         image: const DecorationImage(
-                          image: NetworkImage("https://picsum.photos/seed/alex/800/800"),
+                          image: AssetImage('assets/images/prof_image.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -169,30 +170,6 @@ class HeroSection extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class _SocialButton extends StatelessWidget {
-  final IconData icon;
-  final String url;
-
-  const _SocialButton({required this.icon, required this.url});
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => launchUrl(Uri.parse(url)),
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: const Color(0xFFE2E8F0)), // Slate 200
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Icon(icon, color: const Color(kTextColor), size: 24),
-      ),
     );
   }
 }

@@ -12,7 +12,7 @@ void main() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: const [Locale('zh'), Locale('en')],
+      supportedLocales: const [Locale('zh'), Locale('en'), Locale('ja')],
       path: 'assets/translations',
       fallbackLocale: const Locale('zh'),
       child: const ResumeApp(),
@@ -39,9 +39,9 @@ class ResumeApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4F46E5)), // Indigo 600
           useMaterial3: true,
-          textTheme: GoogleFonts.notoSansTcTextTheme(
-            Theme.of(context).textTheme,
-          ),
+          textTheme: context.locale.languageCode == 'ja'
+              ? GoogleFonts.notoSansJpTextTheme(Theme.of(context).textTheme)
+              : GoogleFonts.notoSansTcTextTheme(Theme.of(context).textTheme),
           scaffoldBackgroundColor: Colors.white,
         ),
         home: const PortfolioHomePage(),

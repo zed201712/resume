@@ -153,6 +153,80 @@ const resumeDataEn = ResumeData(
   ],
 );
 
+const resumeDataJa = ResumeData(
+  name: "林小明 (Alex Lin)",
+  title: "シニアフルスタックエンジニア / AIアプリ開発者",
+  bio: "Reactエコシステムと生成AIの統合に注力し、5年以上のWeb開発経験を持っています。直感的でインパクトのあるユーザー体験の構築に情熱を注ぎ、常に新しい技術と製品化の可能性を探求しています。",
+  email: "alex.lin.dev@example.com",
+  phone: "+886 912 345 678",
+  location: "台湾、台北市",
+  linkedin: "linkedin.com/in/alexlin",
+  github: "github.com/alexlin-dev",
+  skills: [
+    Skill(name: "React / Next.js", level: 95, category: "Frontend"),
+    Skill(name: "TypeScript", level: 90, category: "Frontend"),
+    Skill(name: "Tailwind CSS", level: 92, category: "Frontend"),
+    Skill(name: "Node.js / NestJS", level: 85, category: "Backend"),
+    Skill(name: "PostgreSQL / MongoDB", level: 80, category: "Backend"),
+    Skill(name: "Gemini / OpenAI API", level: 88, category: "Tools"),
+    Skill(name: "Docker / AWS", level: 75, category: "Tools"),
+    Skill(name: "プロジェクト管理", level: 85, category: "Soft Skills"),
+    Skill(name: "チーム間コミュニケーション", level: 90, category: "Soft Skills"),
+  ],
+  experiences: [
+    Experience(
+      id: "exp1",
+      company: "Future Tech Inc.",
+      role: "シニアフロントエンドエンジニア",
+      period: "2021 - 現在",
+      description: [
+        "主力SaaSプラットフォームの開発を主導し、ページの読み込み速度を40%向上させました。",
+        "AI支援による開発フローを導入し、チームのコードレビュー時間を25%削減しました。",
+        "社内UIコンポーネントライブラリを確立し、プロジェクト全体で開発工数を30%削減しました。",
+      ],
+      skills: ["React", "TypeScript", "Micro-frontend", "Jenkins"],
+    ),
+    Experience(
+      id: "exp2",
+      company: "Innovate Digital",
+      role: "フルスタックエンジニア",
+      period: "2018 - 2021",
+      description: [
+        "1日10万アクセスを支える高トラフィックなEコマースプラットフォームを開発しました。",
+        "バックエンドAPIの設計と最適化を担当し、データクエリ効率を60%向上させました。",
+        "プロダクトの立ち上げを支援し、1年以内に月間アクティブユーザー数5万人を達成しました。",
+      ],
+      skills: ["Node.js", "Express", "Vue.js", "PostgreSQL"],
+    ),
+  ],
+  projects: [
+    Project(
+      id: "p1",
+      title: "AI面接アシスタント",
+      description: "Gemini APIに基づいた模擬面接プラットフォームで、リアルタイムの音声フィードバックと採点を提供します。",
+      image: "https://picsum.photos/seed/ai-interview/800/450",
+      tags: ["React", "Gemini API", "Web Audio API"],
+      link: "#",
+    ),
+    Project(
+      id: "p2",
+      title: "分散型カンバンシステム",
+      description: "視覚的なデータ分析を統合した、リアルタイムコラボレーション対応のプロジェクト管理ツール。",
+      image: "https://picsum.photos/seed/kanban/800/450",
+      tags: ["Next.js", "Socket.io", "D3.js"],
+      link: "#",
+    ),
+    Project(
+      id: "p3",
+      title: "国際物流トラッカー",
+      description: "複数の配送業者APIを統合し、地図表示による一元的な荷物追跡を提供します。",
+      image: "https://picsum.photos/seed/logistics/800/450",
+      tags: ["Google Maps API", "NestJS", "Tailwind"],
+      link: "#",
+    ),
+  ],
+);
+
 // Backward compatibility or default
 @Deprecated('Use LanguageProvider to get localized ResumeData')
 const resumeData = resumeDataZh;

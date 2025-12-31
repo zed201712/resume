@@ -10,6 +10,8 @@ class LanguageProvider extends ChangeNotifier {
   ResumeData getResumeData(BuildContext context) {
     if (context.locale.languageCode == 'en') {
       return resumeDataEn;
+    } else if (context.locale.languageCode == 'ja') {
+      return resumeDataJa;
     }
     return resumeDataZh;
   }

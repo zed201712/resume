@@ -234,6 +234,11 @@ class _LanguageSwitcher extends StatelessWidget {
             label: 'EN',
             isSelected: context.locale.languageCode == 'en',
           ),
+          _LangButton(
+            locale: const Locale('ja'),
+            label: 'JP',
+            isSelected: context.locale.languageCode == 'ja',
+          ),
         ],
       ),
     );

@@ -158,7 +158,7 @@ class HeroSection extends StatelessWidget {
                           ),
                         ],
                         image: const DecorationImage(
-                          image: AssetImage('assets/images/prof_image.png'),
+                          image: NetworkImage("https://picsum.photos/seed/alex/800/800"),
                           fit: BoxFit.cover,
                         ),
                       ),

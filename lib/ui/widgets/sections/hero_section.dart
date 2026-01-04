@@ -18,6 +18,9 @@ class HeroSection extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final isMobile = constraints.maxWidth < 768;
+        final imageSize = Size(564, 654);
+        final imageWidgetWidth = isMobile ? 280.0 : 300.0;
+        final imageWidgetSize = Size(imageWidgetWidth, imageWidgetWidth * imageSize.height / imageSize.width);
 
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 40),
@@ -136,8 +139,8 @@ class HeroSection extends StatelessWidget {
                     Transform.rotate(
                       angle: 6 * 3.14159 / 180,
                       child: Container(
-                        width: isMobile ? 280 : 380,
-                        height: isMobile ? 280 : 380,
+                        width: imageWidgetSize.width,
+                        height: imageWidgetSize.height,
                         decoration: BoxDecoration(
                           color: const Color(kPrimaryColor).withOpacity(0.1),
                           borderRadius: BorderRadius.circular(48),
@@ -145,8 +148,8 @@ class HeroSection extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: isMobile ? 280 : 380,
-                      height: isMobile ? 280 : 380,
+                      width: imageWidgetSize.width,
+                      height: imageWidgetSize.height,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(48),
                         border: Border.all(color: Colors.white, width: 4),
@@ -158,7 +161,8 @@ class HeroSection extends StatelessWidget {
                           ),
                         ],
                         image: const DecorationImage(
-                          image: NetworkImage("https://picsum.photos/seed/alex/800/800"),
+                          //image: NetworkImage("https://picsum.photos/seed/alex/800/800"),
+                          image: AssetImage('assets/images/prof_image_002.png'),
                           fit: BoxFit.cover,
                         ),
                       ),

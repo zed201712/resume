@@ -62,7 +62,7 @@ const resumeDataZh = ResumeData(
         "學習使用C語言開發BIOS相關的基礎知識(啟動流程等)。",
         "分析程式碼, 修改功能, Debug。",
       ],
-      skills: ["C", "Assembly", "SVN"],
+      skills: ["C", "SVN"],
     ),
   ],
   projects: [
@@ -142,7 +142,7 @@ const resumeDataEn = ResumeData(
         "Learned fundamentals of BIOS development using C language (boot process, etc.).",
         "Code analysis, feature modification, and debugging.",
       ],
-      skills: ["C", "Assembly", "SVN"],
+      skills: ["C", "SVN"],
     ),
   ],
   projects: [
@@ -214,7 +214,7 @@ const resumeDataJa = ResumeData(
         "C言語を用いたBIOS開発の基礎知識習得（起動プロセス等）。",
         "コード解析、機能修正、デバッグ。",
       ],
-      skills: ["C", "Assembly", "SVN"],
+      skills: ["C", "SVN"],
     ),
   ],
   projects: [

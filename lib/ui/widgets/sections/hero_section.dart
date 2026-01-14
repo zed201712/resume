@@ -18,7 +18,7 @@ class HeroSection extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final isMobile = constraints.maxWidth < 768;
-        final imageSize = Size(564, 654);
+        final imageSize = Size(511, 767);
         final imageWidgetWidth = isMobile ? 280.0 : 300.0;
         final imageWidgetSize = Size(imageWidgetWidth, imageWidgetWidth * imageSize.height / imageSize.width);
 
@@ -162,7 +162,7 @@ class HeroSection extends StatelessWidget {
                         ],
                         image: const DecorationImage(
                           //image: NetworkImage("https://picsum.photos/seed/alex/800/800"),
-                          image: AssetImage('assets/images/prof_image_002.png'),
+                          image: AssetImage('assets/images/prof_image_001.png'),
                           fit: BoxFit.cover,
                         ),
                       ),

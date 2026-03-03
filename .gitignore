@@ -13,6 +13,9 @@ macos/
 pubspec.lock
 README.md
 windows/
+*CLAUDE.md
+**claude/
+ignore_docs/
 
 # Miscellaneous
 *.class
@@ -109,6 +112,7 @@ unlinked_spec.ds
 **/macos/Flutter/GeneratedPluginRegistrant.swift
 **/macos/Flutter/ephemeral
 **/xcuserdata/
+.DS_Store
 
 # Windows
 **/windows/flutter/generated_plugin_registrant.cc

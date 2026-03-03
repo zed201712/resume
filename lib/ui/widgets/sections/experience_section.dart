@@ -31,12 +31,15 @@ class ExperienceSection extends StatelessWidget {
                 child: const Icon(LucideIcons.briefcase, color: Colors.white, size: 20),
               ),
               const SizedBox(width: 12),
-              Text(
-                tr('experienceTitle'),
-                style: GoogleFonts.notoSansTc(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(kTextColor),
+              Flexible(
+                child: Text(
+                  tr('experienceTitle'),
+                  style: GoogleFonts.notoSansTc(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(kTextColor),
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               const SizedBox(width: 16),

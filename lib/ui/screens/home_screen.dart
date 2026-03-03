@@ -140,21 +140,24 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            RichText(
-                              text: TextSpan(
-                                style: GoogleFonts.notoSansTc(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: const Color(0xFF4338CA), // Indigo 700
-                                  letterSpacing: -0.5,
-                                ),
-                                children: const [
-                                  TextSpan(text: "Portfolio"),
-                                  TextSpan(
-                                    text: ".",
-                                    style: TextStyle(color: Color(0xFF94A3B8)), // Slate 400
+                            Flexible(
+                              child: RichText(
+                                overflow: TextOverflow.ellipsis,
+                                text: TextSpan(
+                                  style: GoogleFonts.notoSansTc(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xFF4338CA), // Indigo 700
+                                    letterSpacing: -0.5,
                                   ),
-                                ],
+                                  children: const [
+                                    TextSpan(text: "Portfolio"),
+                                    TextSpan(
+                                      text: ".",
+                                      style: TextStyle(color: Color(0xFF94A3B8)), // Slate 400
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             if (MediaQuery.of(context).size.width >= 768)
@@ -164,20 +167,35 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                                   _NavButton(title: "navSkills".tr(), onTap: () => _scrollToSection(_skillsKey)),
                                   _NavButton(title: "navExperience".tr(), onTap: () => _scrollToSection(_experienceKey)),
                                   _NavButton(title: "navProjects".tr(), onTap: () => _scrollToSection(_projectsKey)),
-                                  // const SizedBox(width: 16),
-                                  // ElevatedButton(
-                                  //   onPressed: () => _scrollToSection(_contactKey),
-                                  //   style: ElevatedButton.styleFrom(
-                                  //     backgroundColor: const Color(kPrimaryColor),
-                                  //     foregroundColor: Colors.white,
-                                  //     elevation: 2,
-                                  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-                                  //     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                                  //     textStyle: GoogleFonts.notoSansTc(fontWeight: FontWeight.w500),
-                                  //   ),
-                                  //   child: Text("navContact".tr()),
-                                  // ),
                                   const SizedBox(width: 16),
+                                  _LanguageSwitcher(),
+                                ],
+                              )
+                            else
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(LucideIcons.user, size: 20, color: Color(0xFF475569)),
+                                    onPressed: () => _scrollToSection(_heroKey),
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(LucideIcons.zap, size: 20, color: Color(0xFF475569)),
+                                    onPressed: () => _scrollToSection(_skillsKey),
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(LucideIcons.briefcase, size: 20, color: Color(0xFF475569)),
+                                    onPressed: () => _scrollToSection(_experienceKey),
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(LucideIcons.code, size: 20, color: Color(0xFF475569)),
+                                    onPressed: () => _scrollToSection(_projectsKey),
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  const SizedBox(width: 8),
                                   _LanguageSwitcher(),
                                 ],
                               ),

@@ -36,12 +36,15 @@ class SkillsSection extends StatelessWidget {
                     child: const Icon(LucideIcons.code, color: Colors.white, size: 20),
                   ),
                   const SizedBox(width: 12),
-                  Text(
-                    tr('skillsTitle'),
-                    style: GoogleFonts.notoSansTc(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: const Color(kTextColor),
+                  Flexible(
+                    child: Text(
+                      tr('skillsTitle'),
+                      style: GoogleFonts.notoSansTc(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(kTextColor),
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   const SizedBox(width: 16),
@@ -117,7 +120,7 @@ class SkillsSection extends StatelessWidget {
                         }
 
                         return Container(
-                          width: isMobile ? double.infinity : (constraints.maxWidth - 48) / 2 - 16, 
+                          width: isMobile ? constraints.maxWidth : (constraints.maxWidth - 48) / 2 - 16, 
                           // Simple calculation for 2 columns in desktop part of Flex
                           constraints: const BoxConstraints(minWidth: 200),
                           padding: const EdgeInsets.all(24),
@@ -153,11 +156,14 @@ class SkillsSection extends StatelessWidget {
                                               ),
                                             ),
                                             const SizedBox(width: 8),
-                                            Text(
-                                              skill.name,
-                                              style: GoogleFonts.notoSansTc(
-                                                fontSize: 14,
-                                                color: const Color(kSubTextColor),
+                                            Expanded(
+                                              child: Text(
+                                                skill.name,
+                                                style: GoogleFonts.notoSansTc(
+                                                  fontSize: 14,
+                                                  color: const Color(kSubTextColor),
+                                                ),
+                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
                                           ],

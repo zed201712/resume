@@ -6,3 +6,4 @@ This is my personal website. It introduces my background, technical skills, work
 これは私のパーソナルウェブサイトです。私の経歴、技術スキル、職務経歴、および一部の作品を紹介しています。
 ---
 這是我的個人網站。介紹我的背景、技術能力、工作經歷，以及部分作品。
+---

@@ -8,7 +8,7 @@ const kSubTextColor = 0xFF64748B; // Slate 500
 const resumeDataZh = ResumeData(
   name: "大川大一 (Taichi Okawa)",
   title: "資深App工程師",
-  bio: "台灣宜蘭出身, 2024年取得日本國籍。\n資訊工程系畢業, 在BIOS開發1年後, 轉換跑道進行App開發。\n此後8年期間 在iOS（Swift + UIKit / SwiftUI）開發累積相關經驗, 以及3年的Android相關開發經驗。\n在目前的工作在職７年, 負責開發 / 維護, 精通從整體架構的理解到細節的實作。\n雖然主要負責前端開發。 但也負責的後端部分開發, 使用PHP / Oracle 資料庫的開發 / 測試。擁有理解並設計開發整體系統的相關經驗。",
+  bio: "台灣宜蘭出身, 2024年取得日本國籍。\n資訊工程系畢業, 在BIOS開發1年後, 轉換跑道進行App開發。\n在前一份工作7年期間, 負責開發 / 維護, 熟悉從整體架構的理解到細節的實作。\n雖然主要負責iOS前端開發(Swift / UIKit / SwiftUI)。 但也負責Android(Java / Kotlin)以及後端部分開發(PHP / Oracle)。擁有理解並設計開發整體系統的相關經驗。",
   email: "",
   phone: "",
   location: "台北市, 台灣",
@@ -88,7 +88,7 @@ const resumeDataZh = ResumeData(
 const resumeDataEn = ResumeData(
   name: "Taichi Okawa",
   title: "Senior Mobile Engineer",
-  bio: "Born in Yilan, Taiwan, acquired Japanese nationality in 2024.\nGraduated from Computer Science Dept. After 1 year of BIOS development, switched to App development.\nSince then, accumulated 8 years of experience in iOS (Swift + UIKit / SwiftUI) development, and 3 years of Android development experience.\nIn the current job for 7 years, responsible for development/maintenance, proficient from understanding the overall architecture to detailed implementation.\nAlthough primarily responsible for frontend development, also in charge of backend development, using PHP / Oracle Database for development/testing. Experienced in understanding and designing the development of entire systems.",
+  bio: "Born in Yilan, Taiwan, and acquired Japanese nationality in 2024.\nGraduated from Computer Science Dept. After 1 year of BIOS development, I transitioned to App development.\nDuring my 7 years in my previous role, I was responsible for development and maintenance, and I am proficient in everything from overall architecture to detailed implementation.\nWhile primarily focused on iOS frontend development (Swift / UIKit / SwiftUI), I have also handled Android development (Java / Kotlin) and backend development (PHP / Oracle). I have experience in understanding and designing entire systems.",
   email: "",
   phone: "",
   location: "Taipei, Taiwan",
@@ -160,7 +160,7 @@ const resumeDataEn = ResumeData(
 const resumeDataJa = ResumeData(
   name: "大川大一 (Taichi Okawa)",
   title: "シニアモバイルエンジニア",
-  bio: "台湾・宜蘭出身、2024年に日本国籍を取得。\n情報工学科を卒業後、BIOS開発を1年経験し、アプリ開発へ転向。\nその後8年間、iOS（Swift + UIKit / SwiftUI）開発の経験を積み、3年間のAndroid開発経験もあります。\n現職には7年在籍し、開発・保守を担当。全体アーキテクチャの設計からリリースまで関わってきました。\n主にフロントエンド開発を担当していますが、バックエンド開発も担当しており、PHP / Oracleデータベースを使用した開発・テストを行っています。システム全体の設計・開発を理解し、携わった経験があります。",
+  bio: "台湾・宜蘭出身、2024年に日本国籍を取得。\n情報工学科を卒業後、BIOS開発を1年経験し、アプリ開発へ転向。\n前職での7年間、開発・保守を担当し、全体アーキテクチャの理解から詳細の実装まで携わってきました。\n主にiOSフロントエンド開発（Swift / UIKit / SwiftUI）を担当してきましたが、Android（Java / Kotlin）やバックエンド（PHP / Oracle）の開発経験もあり、システム全体の設計・開発を深く理解しています。",
   email: "",
   phone: "",
   location: "台湾・台北",

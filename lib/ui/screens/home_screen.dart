@@ -66,9 +66,9 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                       // Sections
                       SizedBox(key: _heroKey, child: const HeroSection()),
                       const SizedBox(height: 128),
-                      SizedBox(key: _skillsKey, child: const SkillsSection()),
-                      const SizedBox(height: 128),
                       SizedBox(key: _experienceKey, child: const ExperienceSection()),
+                      const SizedBox(height: 128),
+                      SizedBox(key: _skillsKey, child: const SkillsSection()),
                       const SizedBox(height: 128),
                       SizedBox(key: _projectsKey, child: const ProjectsSection()),
                       // const SizedBox(height: 128),
@@ -164,8 +164,8 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                               Row(
                                 children: [
                                   _NavButton(title: "navAbout".tr(), onTap: () => _scrollToSection(_heroKey)),
-                                  _NavButton(title: "navSkills".tr(), onTap: () => _scrollToSection(_skillsKey)),
                                   _NavButton(title: "navExperience".tr(), onTap: () => _scrollToSection(_experienceKey)),
+                                  _NavButton(title: "navSkills".tr(), onTap: () => _scrollToSection(_skillsKey)),
                                   _NavButton(title: "navProjects".tr(), onTap: () => _scrollToSection(_projectsKey)),
                                   const SizedBox(width: 16),
                                   _LanguageSwitcher(),

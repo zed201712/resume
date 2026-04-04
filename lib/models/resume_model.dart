@@ -1,7 +1,9 @@
 class ResumeData {
   final String name;
   final String title;
-  final String bio;
+  final String introBio;
+  final String experienceBio;
+  final String projectBio;
   final String email;
   final String phone;
   final String location;
@@ -14,7 +16,9 @@ class ResumeData {
   const ResumeData({
     required this.name,
     required this.title,
-    required this.bio,
+    required this.introBio,
+    required this.experienceBio,
+    required this.projectBio,
     required this.email,
     required this.phone,
     required this.location,

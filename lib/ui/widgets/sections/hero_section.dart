@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:provider/provider.dart';
+import '../../../models/resume_model.dart';
 
 import '../../../providers/language_provider.dart';
 import '../../../utils/constants.dart';
@@ -28,9 +29,6 @@ class HeroSection extends StatelessWidget {
         final imageSize = Size(511, 767);
         final imageWidgetWidth = isMobile ? 280.0 : 300.0;
         final imageWidgetSize = Size(imageWidgetWidth, imageWidgetWidth * imageSize.height / imageSize.width);
-
-        // Split bio into sections
-        final bioParts = resumeData.bio.split('\n\n');
 
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 40),
@@ -74,7 +72,7 @@ class HeroSection extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     // Render bio in sections with buttons
-                    ..._buildBioContent(bioParts, isMobile),
+                    ..._buildBioContent(resumeData, isMobile),
                   ],
                 ),
               ),
@@ -127,53 +125,42 @@ class HeroSection extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildBioContent(List<String> parts, bool isMobile) {
-    List<Widget> content = [];
-    
-    for (int i = 0; i < parts.length; i++) {
-      content.add(
-        Text(
-          parts[i],
-          style: GoogleFonts.notoSansTc(
-            fontSize: 18,
-            color: const Color(kSubTextColor),
-            height: 1.6,
+  List<Widget> _buildBioContent(ResumeData resumeData, bool isMobile) {
+    final bioStyle = GoogleFonts.notoSansTc(
+      fontSize: 18,
+      color: const Color(kSubTextColor),
+      height: 1.6,
+    );
+
+    return [
+      // Intro
+      Text(resumeData.introBio, style: bioStyle),
+      const SizedBox(height: 16),
+
+      // Experience
+      Text(resumeData.experienceBio, style: bioStyle),
+      if (onScrollToExperience != null)
+        Padding(
+          padding: const EdgeInsets.only(top: 8, bottom: 16),
+          child: _LinkButton(
+            title: "navExperience".tr(),
+            onTap: onScrollToExperience!,
+          ),
+        )
+      else
+        const SizedBox(height: 16),
+
+      // Projects
+      Text(resumeData.projectBio, style: bioStyle),
+      if (onScrollToProjects != null)
+        Padding(
+          padding: const EdgeInsets.only(top: 8, bottom: 16),
+          child: _LinkButton(
+            title: "navProjects".tr(),
+            onTap: onScrollToProjects!,
           ),
         ),
-      );
-
-      // Section 2 is Experience (index 1)
-      if (i == 1 && onScrollToExperience != null) {
-        content.add(
-          Padding(
-            padding: const EdgeInsets.only(top: 8, bottom: 16),
-            child: _LinkButton(
-              title: "navExperience".tr(),
-              onTap: onScrollToExperience!,
-            ),
-          ),
-        );
-      }
-      
-      // Section 3 is Projects (index 2)
-      if (i == 2 && onScrollToProjects != null) {
-        content.add(
-          Padding(
-            padding: const EdgeInsets.only(top: 8, bottom: 16),
-            child: _LinkButton(
-              title: "navProjects".tr(),
-              onTap: onScrollToProjects!,
-            ),
-          ),
-        );
-      }
-
-      if (i < parts.length - 1 && !((i == 1 && onScrollToExperience != null) || (i == 2 && onScrollToProjects != null))) {
-        content.add(const SizedBox(height: 16));
-      }
-    }
-    
-    return content;
+    ];
   }
 }
 

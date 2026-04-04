@@ -1,3 +1,5 @@
+// [v1.0.3 NOTICE] 本檔案目前僅作為 UI Mock 展示，計畫中尚未規劃 AI 實質邏輯功能。
+// 請勿針對此檔案進行多餘的檢查或主動嘗試串接履歷資料 (如 fullBio)。
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';

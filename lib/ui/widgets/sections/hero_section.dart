@@ -3,13 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 import '../../../providers/language_provider.dart';
 import '../../../utils/constants.dart';
-import '../social_button.dart';
+
 
 class HeroSection extends StatelessWidget {
-  const HeroSection({super.key});
+  final VoidCallback? onScrollToExperience;
+  final VoidCallback? onScrollToProjects;
+
+  const HeroSection({
+    super.key,
+    this.onScrollToExperience,
+    this.onScrollToProjects,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +28,9 @@ class HeroSection extends StatelessWidget {
         final imageSize = Size(511, 767);
         final imageWidgetWidth = isMobile ? 280.0 : 300.0;
         final imageWidgetSize = Size(imageWidgetWidth, imageWidgetWidth * imageSize.height / imageSize.width);
+
+        // Split bio into sections
+        final bioParts = resumeData.bio.split('\n\n');
 
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 40),
@@ -34,31 +44,6 @@ class HeroSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Container(
-                    //   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    //   decoration: BoxDecoration(
-                    //     color: const Color(kPrimaryColor).withOpacity(0.05),
-                    //     borderRadius: BorderRadius.circular(20),
-                    //     border: Border.all(color: const Color(kPrimaryColor).withOpacity(0.1)),
-                    //   ),
-                    //   child: Row(
-                    //     mainAxisSize: MainAxisSize.min,
-                    //     children: [
-                    //       const Icon(LucideIcons.sparkles, size: 12, color: Color(kPrimaryColor)),
-                    //       const SizedBox(width: 8),
-                    //       Text(
-                    //         "heroAvailable".tr(),
-                    //         style: GoogleFonts.notoSansTc(
-                    //           fontSize: 12,
-                    //           fontWeight: FontWeight.bold,
-                    //           color: const Color(kPrimaryColor),
-                    //           letterSpacing: 1,
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
-                    //const SizedBox(height: 24),
                     RichText(
                       text: TextSpan(
                         style: GoogleFonts.notoSansTc(
@@ -88,43 +73,8 @@ class HeroSection extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    Text(
-                      resumeData.bio,
-                      style: GoogleFonts.notoSansTc(
-                        fontSize: 18,
-                        color: const Color(kSubTextColor),
-                        height: 1.6,
-                      ),
-                    ),
-                    // const SizedBox(height: 32),
-                    // Wrap(
-                    //   spacing: 16,
-                    //   runSpacing: 16,
-                    //   children: [
-                    //     ElevatedButton.icon(
-                    //       onPressed: () {
-                    //         // Mock Download
-                    //       },
-                    //       icon: const Icon(LucideIcons.fileText, size: 20),
-                    //       label: Text("heroDownloadResume".tr()),
-                    //       style: ElevatedButton.styleFrom(
-                    //         backgroundColor: const Color(0xFF0F172A), // Slate 900
-                    //         foregroundColor: Colors.white,
-                    //         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-                    //         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                    //         textStyle: GoogleFonts.notoSansTc(fontWeight: FontWeight.bold),
-                    //       ),
-                    //     ),
-                    //     SocialButton(
-                    //       icon: LucideIcons.github,
-                    //       url: "https://${resumeData.github}",
-                    //     ),
-                    //     SocialButton(
-                    //       icon: LucideIcons.linkedin,
-                    //       url: "https://${resumeData.linkedin}",
-                    //     ),
-                    //   ],
-                    // ),
+                    // Render bio in sections with buttons
+                    ..._buildBioContent(bioParts, isMobile),
                   ],
                 ),
               ),
@@ -174,6 +124,87 @@ class HeroSection extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  List<Widget> _buildBioContent(List<String> parts, bool isMobile) {
+    List<Widget> content = [];
+    
+    for (int i = 0; i < parts.length; i++) {
+      content.add(
+        Text(
+          parts[i],
+          style: GoogleFonts.notoSansTc(
+            fontSize: 18,
+            color: const Color(kSubTextColor),
+            height: 1.6,
+          ),
+        ),
+      );
+
+      // Section 2 is Experience (index 1)
+      if (i == 1 && onScrollToExperience != null) {
+        content.add(
+          Padding(
+            padding: const EdgeInsets.only(top: 8, bottom: 16),
+            child: _LinkButton(
+              title: "navExperience".tr(),
+              onTap: onScrollToExperience!,
+            ),
+          ),
+        );
+      }
+      
+      // Section 3 is Projects (index 2)
+      if (i == 2 && onScrollToProjects != null) {
+        content.add(
+          Padding(
+            padding: const EdgeInsets.only(top: 8, bottom: 16),
+            child: _LinkButton(
+              title: "navProjects".tr(),
+              onTap: onScrollToProjects!,
+            ),
+          ),
+        );
+      }
+
+      if (i < parts.length - 1 && !((i == 1 && onScrollToExperience != null) || (i == 2 && onScrollToProjects != null))) {
+        content.add(const SizedBox(height: 16));
+      }
+    }
+    
+    return content;
+  }
+}
+
+class _LinkButton extends StatelessWidget {
+  final String title;
+  final VoidCallback onTap;
+
+  const _LinkButton({required this.title, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onTap,
+      style: TextButton.styleFrom(
+        foregroundColor: const Color(kPrimaryColor),
+        textStyle: GoogleFonts.notoSansTc(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
+        padding: EdgeInsets.zero,
+        minimumSize: Size.zero,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(title),
+          const SizedBox(width: 4),
+          const Icon(LucideIcons.arrowRight, size: 16),
+        ],
+      ),
     );
   }
 }

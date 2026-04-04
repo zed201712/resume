@@ -64,9 +64,15 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   child: Column(
                     children: [
                       // Sections
-                      SizedBox(key: _heroKey, child: const HeroSection()),
+                      SizedBox(
+                        key: _heroKey,
+                        child: HeroSection(
+                          onScrollToExperience: () => _scrollToSection(_experienceKey),
+                          onScrollToProjects: () => _scrollToSection(_projectsKey),
+                        ),
+                      ),
                       const SizedBox(height: 128),
-                      SizedBox(key: _experienceKey, child: const ExperienceSection()),
+                       SizedBox(key: _experienceKey, child: const ExperienceSection()),
                       const SizedBox(height: 128),
                       SizedBox(key: _skillsKey, child: const SkillsSection()),
                       const SizedBox(height: 128),

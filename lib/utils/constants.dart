@@ -8,7 +8,7 @@ const kSubTextColor = 0xFF64748B; // Slate 500
 const resumeDataZh = ResumeData(
   name: "大川大一 (Taichi Okawa)",
   title: "資深App工程師",
-  bio: "台灣宜蘭出身, 2024年取得日本國籍。\n資訊工程系畢業, 在BIOS開發1年後, 轉換跑道進行App開發。\n在前一份工作的7年間，我主要負責 iOS 前端開發（Swift / UIKit / SwiftUI），同時參與 Android（Java / Kotlin）與後端（PHP / Oracle）的開發，熟悉從整體架構理解到細節實作的完整開發流程，並具備跨平台與系統設計的能力。\n\n離職後，我應用 AI Agent（如 Claude Code、Antigravity）進行個人 Flutter 專案開發，並嘗試以更高效率的方式完成產品實作。",
+  bio: "台灣宜蘭出身, 2024年取得日本國籍。\n資訊工程系畢業, 在BIOS開發1年後, 轉換跑道進行App開發。\n\n在前一份工作的7年間，我主要負責 iOS 前端開發（Swift / UIKit / SwiftUI），同時參與 Android（Java / Kotlin）與後端（PHP / Oracle）的開發，熟悉從整體架構理解到細節實作的完整開發流程，並具備跨平台與系統設計的能力。\n\n離職後，我應用 AI Agent（如 Claude Code、Antigravity）進行個人 Flutter 專案開發，並嘗試以更高效率的方式完成產品實作。",
   email: "",
   phone: "",
   location: "台北市, 台灣",
@@ -89,7 +89,7 @@ const resumeDataZh = ResumeData(
 const resumeDataEn = ResumeData(
   name: "Taichi Okawa",
   title: "Senior Mobile Engineer",
-  bio: "Born in Yilan, Taiwan, and acquired Japanese nationality in 2024.\nGraduated from the Department of Computer Science, I began my career in BIOS development for one year before transitioning to App development.\nDuring my seven years at my previous company, I primarily focused on iOS frontend development (Swift / UIKit / SwiftUI), while also contributing to Android development (Java / Kotlin) and backend development (PHP / Oracle). This experience allowed me to gain a deep understanding of complete system architecture as well as hands-on implementation, and to develop cross-platform design skills.\n\nAfter leaving my previous role, I began leveraging AI agents (such as Claude Code and Antigravity) in personal Flutter projects, focusing on improving development efficiency and integrating AI into practical workflows.",
+  bio: "Born in Yilan, Taiwan, and acquired Japanese nationality in 2024.\nGraduated from the Department of Computer Science, I began my career in BIOS development for one year before transitioning to App development.\n\nDuring my seven years at my previous company, I primarily focused on iOS frontend development (Swift / UIKit / SwiftUI), while also contributing to Android development (Java / Kotlin) and backend development (PHP / Oracle). This experience allowed me to gain a deep understanding of complete system architecture as well as hands-on implementation, and to develop cross-platform design skills.\n\nAfter leaving my previous role, I began leveraging AI agents (such as Claude Code and Antigravity) in personal Flutter projects, focusing on improving development efficiency and integrating AI into practical workflows.",
   email: "",
   phone: "",
   location: "Taipei, Taiwan",
@@ -162,7 +162,7 @@ const resumeDataEn = ResumeData(
 const resumeDataJa = ResumeData(
   name: "大川大一 (Taichi Okawa)",
   title: "シニアモバイルエンジニア",
-  bio: "台湾・宜蘭出身、2024年に日本国籍を取得。\n情報工学科を卒業後、BIOS開発を1年間経験した後、アプリ開発へキャリアチェンジしました。\n前職での7年間、主にiOSフロントエンド開発（Swift / UIKit / SwiftUI）を担当しつつ、Android（Java / Kotlin）やバックエンド（PHP / Oracle）の開発にも携わりました。この経験により、システム全体のアーキテクチャの理解から詳細実装まで深く習得し、クロスプラットフォームの設計能力を身につけました。\n\n退職後は、Claude Code や Antigravity などの AI Agent を活用し、個人の Flutter プロジェクト開発に取り組んでいます。開発効率の向上や、AIを活用した実践的な開発手法の検証にも取り組んでいます。",
+  bio: "台灣・宜蘭出身、2024年に日本国籍を取得。\n情報工学科を卒業後、BIOS開発を1年間経験した後、アプリ開発へキャリアチェンジしました。\n\n前職での7年間、主にiOSフロントエンド開発（Swift / UIKit / SwiftUI）を担当しつつ、Android（Java / Kotlin）やバックエンド（PHP / Oracle）の開発にも携わりました。この経験により、システム全体のアーキテクチャの理解から詳細実装まで深く習得し、クロスプラットフォームの設計能力を身につけました。\n\n退職後は、Claude Code や Antigravity などの AI Agent を活用し、個人の Flutter プロジェクト開発に取り組んでいます。開発効率の向上や、AIを活用した実践的な開発手法の検証にも取り組んでいます。",
   email: "",
   phone: "",
   location: "台湾・台北",

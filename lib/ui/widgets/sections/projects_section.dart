@@ -62,6 +62,13 @@ class ProjectsSection extends StatelessWidget {
                 crossAxisCount = 2;
               }
 
+              double maxAspectRatio = 0.8;
+              if (resumeData.projects.isNotEmpty) {
+                maxAspectRatio = resumeData.projects
+                    .map((p) => p.aspectRatio)
+                    .reduce((a, b) => a < b ? a : b);
+              }
+
               return GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -69,7 +76,7 @@ class ProjectsSection extends StatelessWidget {
                   crossAxisCount: crossAxisCount,
                   crossAxisSpacing: 32,
                   mainAxisSpacing: 32,
-                  childAspectRatio: 0.62, // Adjust as needed
+                  childAspectRatio: maxAspectRatio,
                 ),
                 itemCount: resumeData.projects.length,
                 itemBuilder: (context, index) {

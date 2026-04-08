@@ -76,6 +76,7 @@ const resumeDataZh = ResumeData(
       image: "assets/images/project_001_icon.png",
       tags: ["WordPress", "PHP"],
       link: "https://sharehouse-tonymoly.com/",
+      aspectRatio: 0.8,
     ),
     Project(
       id: "p2",
@@ -84,6 +85,7 @@ const resumeDataZh = ResumeData(
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
       tags: ["Flutter", "Dart", "Gemini"],
       link: "https://zed201712.github.io/ok_multipl_poker/",
+      aspectRatio: 0.55,
     ),
     // Project(
     //   id: "p3",
@@ -163,10 +165,11 @@ const resumeDataEn = ResumeData(
     Project(
       id: "p1",
       title: "Sharehouse Website System Upgrade",
-      description: "Assist Japanese Sharehouse websites in expanding their functionality and improving their systems.\n• WordPress website\n• Assisted with website backup, modification, and testing\n• Developed customized plugins for guesthouse administrators",
+      description: "Assist Japanese Sharehouse websites in expanding their functionality and improving their systems.\n\n• WordPress website\n• Assisted with website backup, modification, and testing\n• Developed customized plugins for guesthouse administrators",
       image: "assets/images/project_001_icon.png",
       tags: ["WordPress", "PHP"],
       link: "https://sharehouse-tonymoly.com/",
+      aspectRatio: 0.8,
     ),
     Project(
       id: "p2",
@@ -175,6 +178,7 @@ const resumeDataEn = ResumeData(
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
       tags: ["Flutter", "Dart", "Gemini"],
       link: "https://zed201712.github.io/ok_multipl_poker/",
+      aspectRatio: 0.5,
     ),
   ],
 );
@@ -246,10 +250,11 @@ const resumeDataJa = ResumeData(
     Project(
       id: "p1",
       title: "シェアハウスWebシステムアップグレード",
-      description: "日本のシェアハウスのウェブサイトの機能拡張とシステム改善を支援する。• WordPressサイト\n• サイトのバックアップ、改修、テストのサポート\n• ゲストハウス管理者向けのカスタマイズプラグイン開発",
+      description: "日本のシェアハウスのウェブサイトの機能拡張とシステム改善を支援する。\n\n• WordPressサイト\n• サイトのバックアップ、改修、テストのサポート\n• ゲストハウス管理者向けのカスタマイズプラグイン開発",
       image: "assets/images/project_001_icon.png",
       tags: ["WordPress", "PHP"],
       link: "https://sharehouse-tonymoly.com/",
+      aspectRatio: 0.8,
     ),
     Project(
       id: "p2",
@@ -258,6 +263,7 @@ const resumeDataJa = ResumeData(
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
       tags: ["Flutter", "Dart", "Gemini"],
       link: "https://zed201712.github.io/ok_multipl_poker/",
+      aspectRatio: 0.5,
     ),
   ],
 );

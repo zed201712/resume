@@ -67,6 +67,7 @@ class Project {
   final String image;
   final List<String> tags;
   final String link;
+  final double aspectRatio;
 
   const Project({
     required this.id,
@@ -75,6 +76,7 @@ class Project {
     required this.image,
     required this.tags,
     required this.link,
+    required this.aspectRatio,
   });
 }
 

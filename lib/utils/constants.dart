@@ -71,8 +71,8 @@ const resumeDataZh = ResumeData(
   projects: [
     Project(
       id: "p1",
-      title: "線上多人紙牌遊戲",
-      description: "基於 AI開發的 Flutter 的手機端應用，以Android Studio + gemini 用AI實作了90%以上的程式碼的多人紙牌遊戲。",
+      title: "Flutter + Firebase 即時連線遊戲",
+      description: "個人 Side Project，開發線上多人卡牌遊戲並建立自動化部署流程。\n• 前端使用 Flutter 開發 Web 版本\n• 後端使用 Firebase Storage 作為資料儲存\n• GitHub Actions + GitHub Pages 建立 CI/CD 自動化部署流程\n• 透過 AI Agent 協助程式開發與功能實作",
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
       tags: ["Flutter", "Dart", "Gemini"],
       link: "https://zed201712.github.io/ok_multipl_poker/",
@@ -154,8 +154,8 @@ const resumeDataEn = ResumeData(
   projects: [
     Project(
       id: "p1",
-      title: "Online Multiplayer Card Game",
-      description: "AI-based Flutter mobile application. Used Android Studio + Gemini to implement over 90% of the code for this multiplayer card game using AI.",
+      title: "Real-time Multiplayer Game (Flutter + Firebase)",
+      description: "Personal side project featuring an online multiplayer card game with an automated deployment pipeline.\n• Frontend developed with Flutter (Web version)\n• Backend leveraging Firebase for real-time data storage\n• CI/CD pipeline implemented via GitHub Actions and GitHub Pages\n• Developed efficiently using AI Agents for feature implementation and prototyping",
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
       tags: ["Flutter", "Dart", "Gemini"],
       link: "https://zed201712.github.io/ok_multipl_poker/",
@@ -229,8 +229,8 @@ const resumeDataJa = ResumeData(
   projects: [
     Project(
       id: "p1",
-      title: "オンラインマルチプレイヤーカードゲーム",
-      description: "AIベースで開発されたFlutterモバイルアプリ。Android Studio + Geminiを使用し、コードの90%以上をAIによって実装したマルチプレイヤーカードゲームです。",
+      title: "Flutter + Firebase リアルタイム通信ゲーム",
+      description: "個人サイドプロジェクトとして、オンラインマルチプレイヤーカードゲームの開発と自動化デプロイフローを構築。\n• Flutter を用いたウェブ版フロントエンド開発\n• Firebase を活用したリアルタイムデータストレージ構築\n• GitHub Actions と GitHub Pages による CI/CD 自動化デプロイパイプラインの構築\n• AI Agent を活用した効率的な機能実装と開発プロセスの最適化",
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
       tags: ["Flutter", "Dart", "Gemini"],
       link: "https://zed201712.github.io/ok_multipl_poker/",

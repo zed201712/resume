@@ -69,7 +69,7 @@ class ProjectsSection extends StatelessWidget {
                   crossAxisCount: crossAxisCount,
                   crossAxisSpacing: 32,
                   mainAxisSpacing: 32,
-                  childAspectRatio: 0.8, // Adjust as needed
+                  childAspectRatio: 0.62, // Adjust as needed
                 ),
                 itemCount: resumeData.projects.length,
                 itemBuilder: (context, index) {
@@ -205,9 +205,9 @@ class _ProjectCardState extends State<_ProjectCard> {
                           style: GoogleFonts.notoSansTc(
                             fontSize: 14,
                             color: const Color(kSubTextColor),
-                            height: 1.6,
+                            height: 1.2,
                           ),
-                          maxLines: 4,
+                          maxLines: 10,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),

@@ -72,7 +72,7 @@ const resumeDataZh = ResumeData(
     Project(
       id: "p1",
       title: "民宿網站系統升級",
-      description: "• WordPress網站\n• 協助網站備份修改與測試\n• 開發民宿管理者使用的客製化Plugin功能",
+      description: "協助日本民宿網站進行功能擴充與系統改善。\n\n\n• WordPress網站\n• 協助網站備份修改與測試\n• 開發民宿管理者使用的客製化Plugin功能",
       image: "assets/images/project_001_icon.png",
       tags: ["WordPress", "PHP"],
       link: "https://sharehouse-tonymoly.com/",
@@ -80,7 +80,7 @@ const resumeDataZh = ResumeData(
     Project(
       id: "p2",
       title: "Flutter + Firebase 即時連線遊戲",
-      description: "個人 Side Project，開發線上多人卡牌遊戲並建立自動化部署流程。\n• 前端使用 Flutter 開發 Web 版本\n• 後端使用 Firebase Storage 作為資料儲存\n• GitHub Actions + GitHub Pages 建立 CI/CD 自動化部署流程\n• 透過 AI Agent 協助程式開發與功能實作",
+      description: "個人 Side Project，開發線上多人卡牌遊戲並建立自動化部署流程。\n\n• 前端使用 Flutter 開發 Web 版本\n• 後端使用 Firebase Storage 作為資料儲存\n• GitHub Actions + GitHub Pages 建立 CI/CD 自動化部署流程\n• 透過 AI Agent 協助程式開發與功能實作",
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
       tags: ["Flutter", "Dart", "Gemini"],
       link: "https://zed201712.github.io/ok_multipl_poker/",
@@ -162,8 +162,8 @@ const resumeDataEn = ResumeData(
   projects: [
     Project(
       id: "p1",
-      title: "Guesthouse Website System Upgrade",
-      description: "• WordPress website\n• Assisted with website backup, modification, and testing\n• Developed customized plugins for guesthouse administrators",
+      title: "Sharehouse Website System Upgrade",
+      description: "Assist Japanese Sharehouse websites in expanding their functionality and improving their systems.\n• WordPress website\n• Assisted with website backup, modification, and testing\n• Developed customized plugins for guesthouse administrators",
       image: "assets/images/project_001_icon.png",
       tags: ["WordPress", "PHP"],
       link: "https://sharehouse-tonymoly.com/",
@@ -245,8 +245,8 @@ const resumeDataJa = ResumeData(
   projects: [
     Project(
       id: "p1",
-      title: "ゲストハウスWebシステムアップグレード",
-      description: "• WordPressサイト\n• サイトのバックアップ、改修、テストのサポート\n• ゲストハウス管理者向けのカスタマイズプラグイン開発",
+      title: "シェアハウスWebシステムアップグレード",
+      description: "日本のシェアハウスのウェブサイトの機能拡張とシステム改善を支援する。• WordPressサイト\n• サイトのバックアップ、改修、テストのサポート\n• ゲストハウス管理者向けのカスタマイズプラグイン開発",
       image: "assets/images/project_001_icon.png",
       tags: ["WordPress", "PHP"],
       link: "https://sharehouse-tonymoly.com/",

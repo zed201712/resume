@@ -128,10 +128,22 @@ class _ProjectCardState extends State<_ProjectCard> {
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
-                    Image.network(
-                      widget.project.image,
-                      fit: BoxFit.cover,
-                    ),
+                    widget.project.image.isNotEmpty
+                        ? (widget.project.image.startsWith('http')
+                            ? Image.network(
+                                widget.project.image,
+                                fit: BoxFit.cover,
+                              )
+                            : Image.asset(
+                                widget.project.image,
+                                fit: BoxFit.cover,
+                              ))
+                        : Container(
+                            color: const Color(0xFFF1F5F9),
+                            child: const Center(
+                              child: Icon(LucideIcons.image, size: 48, color: Color(kSubTextColor)),
+                            ),
+                          ),
                     AnimatedOpacity(
                       opacity: _isHovered ? 1.0 : 0.0,
                       duration: const Duration(milliseconds: 300),

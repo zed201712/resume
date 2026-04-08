@@ -71,6 +71,14 @@ const resumeDataZh = ResumeData(
   projects: [
     Project(
       id: "p1",
+      title: "民宿網站系統升級",
+      description: "• WordPress網站\n• 協助網站備份修改與測試\n• 開發民宿管理者使用的客製化Plugin功能",
+      image: "assets/images/project_001_icon.png",
+      tags: ["WordPress", "PHP"],
+      link: "https://sharehouse-tonymoly.com/",
+    ),
+    Project(
+      id: "p2",
       title: "Flutter + Firebase 即時連線遊戲",
       description: "個人 Side Project，開發線上多人卡牌遊戲並建立自動化部署流程。\n• 前端使用 Flutter 開發 Web 版本\n• 後端使用 Firebase Storage 作為資料儲存\n• GitHub Actions + GitHub Pages 建立 CI/CD 自動化部署流程\n• 透過 AI Agent 協助程式開發與功能實作",
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
@@ -78,7 +86,7 @@ const resumeDataZh = ResumeData(
       link: "https://zed201712.github.io/ok_multipl_poker/",
     ),
     // Project(
-    //   id: "p2",
+    //   id: "p3",
     //   title: "Web Cam 控制應用",
     //   description: "針對網路攝影機開發的 iOS 控制端，支援即時串流預覽與裝置設定。",
     //   image: "https://picsum.photos/seed/webcam/800/450",
@@ -154,6 +162,14 @@ const resumeDataEn = ResumeData(
   projects: [
     Project(
       id: "p1",
+      title: "Guesthouse Website System Upgrade",
+      description: "• WordPress website\n• Assisted with website backup, modification, and testing\n• Developed customized plugins for guesthouse administrators",
+      image: "assets/images/project_001_icon.png",
+      tags: ["WordPress", "PHP"],
+      link: "https://sharehouse-tonymoly.com/",
+    ),
+    Project(
+      id: "p2",
       title: "Real-time Multiplayer Game (Flutter + Firebase)",
       description: "Personal side project featuring an online multiplayer card game with an automated deployment pipeline.\n• Frontend developed with Flutter (Web version)\n• Backend leveraging Firebase for real-time data storage\n• CI/CD pipeline implemented via GitHub Actions and GitHub Pages\n• Developed efficiently using AI Agents for feature implementation and prototyping",
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
@@ -229,6 +245,14 @@ const resumeDataJa = ResumeData(
   projects: [
     Project(
       id: "p1",
+      title: "ゲストハウスWebシステムアップグレード",
+      description: "• WordPressサイト\n• サイトのバックアップ、改修、テストのサポート\n• ゲストハウス管理者向けのカスタマイズプラグイン開発",
+      image: "assets/images/project_001_icon.png",
+      tags: ["WordPress", "PHP"],
+      link: "https://sharehouse-tonymoly.com/",
+    ),
+    Project(
+      id: "p2",
       title: "Flutter + Firebase リアルタイム通信ゲーム",
       description: "個人サイドプロジェクトとして、オンラインマルチプレイヤーカードゲームの開発と自動化デプロイフローを構築。\n• Flutter を用いたウェブ版フロントエンド開発\n• Firebase を活用したリアルタイムデータストレージ構築\n• GitHub Actions と GitHub Pages による CI/CD 自動化デプロイパイプラインの構築\n• AI Agent を活用した効率的な機能実装と開発プロセスの最適化",
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",

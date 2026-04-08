@@ -28,6 +28,7 @@
 
 *   **AI 助手開發狀態**: 目前專案中雖然有 `AiAssistantWidget` 與 `ChatProvider` 相關檔案，但計畫中**尚未包含**其功能實作。AI 助手目前僅作為 Mock 展示，不具有讀取履歷資料或呼叫 API 的實質邏輯。
 *   **Bio 資料結構**: 自 `v1.0.3` 起，履歷資料的 Bio 被拆分為 `introBio`, `experienceBio`, `projectBio`，並且目前**沒有**合併為一個單一字串 (如 `fullBio`) 的需求。
+*   **Projects 圖片來源**: 自 `v1.0.5` 起，專案 (`Project`) 的圖片已支援顯示來自網路的 `http`/`https` 圖片或本機資源的 `assets/` 圖片。若圖片路徑為空，則會自動以預設縮圖(Placeholder)優雅地作為 fallback 顯示。
 
 > [!IMPORTANT]
 > 後續開發請勿針對 AI 助手功能進行多餘的檢查或主動規劃其邏輯串接方案，除非使用者明確提出要求。

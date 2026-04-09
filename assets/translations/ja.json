@@ -5,7 +5,7 @@
   "navProjects": "プロジェクト",
   "navContact": "お問い合わせ",
   "heroAvailable": "お仕事募集中",
-  "heroHello": "こんにちは、私は",
+  "heroGreeting": "こんにちは、私は{name}です",
   "heroDownloadResume": "履歴書をダウンロード",
   "skillsTitle": "技術スタック",
   "skillsLevel": "習熟度",

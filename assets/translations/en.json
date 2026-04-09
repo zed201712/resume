@@ -5,7 +5,7 @@
   "navProjects": "Projects",
   "navContact": "Contact Me",
   "heroAvailable": "Available for opportunities",
-  "heroHello": "Hello, I am",
+  "heroGreeting": "Hello, I am {name}",
   "heroDownloadResume": "Download Resume",
   "skillsTitle": "Core Tech Stack",
   "skillsLevel": "Proficiency",

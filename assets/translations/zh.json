@@ -5,7 +5,7 @@
   "navProjects": "專案成就",
   "navContact": "聯繫我",
   "heroAvailable": "開放職缺接洽中",
-  "heroHello": "你好，我是",
+  "heroGreeting": "你好，我是 {name}",
   "heroDownloadResume": "下載 PDF 履歷",
   "skillsTitle": "核心技術棧",
   "skillsLevel": "技術掌握度",

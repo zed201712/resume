@@ -42,24 +42,34 @@ class HeroSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    RichText(
-                      text: TextSpan(
-                        style: GoogleFonts.notoSansTc(
-                          fontSize: isMobile ? 36 : 60,
-                          fontWeight: FontWeight.w900,
-                          color: const Color(kTextColor),
-                          height: 1.1,
-                        ),
-                        children: [
-                          TextSpan(text: "${"heroHello".tr()} "),
-                          TextSpan(
-                            text: resumeData.name,
-                            style: const TextStyle(
-                              color: Color(kPrimaryColor), // Gradient effect simplified
+                    Builder(
+                      builder: (context) {
+                        final greetingTemplate = "heroGreeting".tr(namedArgs: {"name": "NAME_HOLDER"});
+                        final parts = greetingTemplate.split("NAME_HOLDER");
+                        final prefix = parts[0];
+                        final suffix = parts.length > 1 ? parts[1] : "";
+
+                        return RichText(
+                          text: TextSpan(
+                            style: GoogleFonts.notoSansTc(
+                              fontSize: isMobile ? 36 : 60,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(kTextColor),
+                              height: 1.1,
                             ),
+                            children: [
+                              TextSpan(text: prefix),
+                              TextSpan(
+                                text: resumeData.name,
+                                style: const TextStyle(
+                                  color: Color(kPrimaryColor),
+                                ),
+                              ),
+                              if (suffix.isNotEmpty) TextSpan(text: suffix),
+                            ],
                           ),
-                        ],
-                      ),
+                        );
+                      },
                     ),
                     const SizedBox(height: 16),
                     Text(

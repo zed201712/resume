@@ -87,6 +87,15 @@ const resumeDataZh = ResumeData(
       link: "https://zed201712.github.io/ok_multipl_poker/",
       aspectRatio: 0.55,
     ),
+    Project(
+      id: "p3",
+      title: "語音待辦清單 App",
+      description: "個人 Side Project，驗證「由語音輸入，經生成式 AI 理解意圖並操作 App」的互動方式。\n\n• 使用 SwiftUI 開發 iOS／macOS App\n• 以規格文件驅動 AI Agent 協作開發\n• LLM 依照語音輸入呼叫對應的 tool，新增或修改待辦事項\n• 可切換 Gemini API 與裝置上的 Apple Intelligence",
+      image: "assets/images/voice_todo.png",
+      tags: ["Swift", "SwiftUI", "Claude Code"],
+      link: "https://github.com/zed201712/VoiceTodo",
+      aspectRatio: 0.55,
+    ),
     // Project(
     //   id: "p3",
     //   title: "Web Cam 控制應用",
@@ -180,6 +189,15 @@ const resumeDataEn = ResumeData(
       link: "https://zed201712.github.io/ok_multipl_poker/",
       aspectRatio: 0.5,
     ),
+    Project(
+      id: "p3",
+      title: "Voice-Driven To-Do App",
+      description: "Personal side project validating an interaction model where voice input is interpreted by generative AI to operate the app.\n\n• iOS / macOS app built with SwiftUI\n• Spec-driven development in collaboration with AI Agents\n• LLM calls the matching tool based on voice input to add or edit to-do items\n• Switchable between Gemini API and on-device Apple Intelligence",
+      image: "assets/images/voice_todo.png",
+      tags: ["Swift", "SwiftUI", "Claude Code"],
+      link: "https://github.com/zed201712/VoiceTodo",
+      aspectRatio: 0.5,
+    ),
   ],
 );
 
@@ -263,6 +281,15 @@ const resumeDataJa = ResumeData(
       image: "https://raw.githubusercontent.com/zed201712/ok_multipl_poker/main/assets/images/zoo_cards/zoo_bg_002.png",
       tags: ["Flutter", "Dart", "Gemini"],
       link: "https://zed201712.github.io/ok_multipl_poker/",
+      aspectRatio: 0.5,
+    ),
+    Project(
+      id: "p3",
+      title: "音声ToDoリストアプリ",
+      description: "個人サイドプロジェクトとして、「音声入力を生成AIが意図理解し、アプリを操作する」インタラクションを検証。\n\n• SwiftUI による iOS／macOS アプリ開発\n• 仕様書駆動による AI Agent との協働開発\n• 音声入力に応じて LLM が対応する tool を呼び出し、ToDo を追加・編集\n• Gemini API とデバイス上の Apple Intelligence を切り替え可能",
+      image: "assets/images/voice_todo.png",
+      tags: ["Swift", "SwiftUI", "Claude Code"],
+      link: "https://github.com/zed201712/VoiceTodo",
       aspectRatio: 0.5,
     ),
   ],

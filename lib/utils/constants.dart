@@ -129,7 +129,7 @@ const resumeDataEn = ResumeData(
   experiences: [
     Experience(
       id: "exp1",
-      company: "IBEX Co., Ltd.",
+      company: "IBEC Co., Ltd.",
       role: "iOS/Android/Server Engineer",
       period: "2018/06 - 2025/12",
       description: [

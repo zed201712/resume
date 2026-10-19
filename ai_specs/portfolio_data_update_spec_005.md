@@ -52,7 +52,7 @@
             *   **Details:** C Language. BIOS boot process knowledge. Code analysis, feature modification, Debug.
     *   **專案 (Projects)：**
         *   由於未提供獨立專案，需將工作經歷中的重點轉化為專案展示，或保留結構待填。建議建立以下專案項目：
-            *   **Project 1:** "iOS/Android Integrated System" (Based on Ibex experience). Tags: Swift, Kotlin, PHP.
+            *   **Project 1:** "iOS/Android Integrated System" (Based on Ibec experience). Tags: Swift, Kotlin, PHP.
             *   **Project 2:** "Web Camera Controller" (Based on San Zhen experience). Tags: Objective-C, UIKit.
             *   **Project 3:** "UEFI BIOS Firmware" (Based on Insyde experience). Tags: C, Assembly.
         *   圖片：使用 Lorem Picsum 佔位符。

@@ -63,6 +63,7 @@
 ### 2. 業務邏輯層 (Business Logic Layer)
 *   **職責**: 封裝應用程式狀態與業務邏輯，並透過 `notifyListeners()` 通知 UI 更新。
 *   **LanguageProvider**: 封裝多國語言切換邏輯，與 `easy_localization` 協同工作。
+*   **網址語言參數**: Web 版可用 `?lang=en|jp|ch` 指定開場語言，優先於已存的語言選擇（見 [v1.0.8-design.md](../plans/v1.0.0/v1.0.8-design.md)）。
 
 ### 3. 數據層 (Data Layer)
 *   **職責**: 負責資料結構的定義與原始資料（JSON）的解析。

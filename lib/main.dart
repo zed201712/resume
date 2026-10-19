@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'providers/chat_provider.dart';
 import 'providers/language_provider.dart';
 import 'ui/screens/home_screen.dart';
+import 'utils/locale_from_query.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,13 +16,33 @@ void main() async {
       supportedLocales: const [Locale('zh'), Locale('en'), Locale('ja')],
       path: 'assets/translations',
       fallbackLocale: const Locale('zh'),
-      child: const ResumeApp(),
+      child: ResumeApp(
+        urlLocale: localeFromQuery(Uri.base.queryParameters['lang']),
+      ),
     ),
   );
 }
 
-class ResumeApp extends StatelessWidget {
-  const ResumeApp({super.key});
+class ResumeApp extends StatefulWidget {
+  /// 網址 `?lang=` 指定的語言，優先於已存的語言選擇。
+  final Locale? urlLocale;
+
+  const ResumeApp({super.key, this.urlLocale});
+
+  @override
+  State<ResumeApp> createState() => _ResumeAppState();
+}
+
+class _ResumeAppState extends State<ResumeApp> {
+  @override
+  void initState() {
+    super.initState();
+    final urlLocale = widget.urlLocale;
+    if (urlLocale != null) {
+      // easy_localization 有已存語言時會忽略 startLocale，因此改在啟動後套用。
+      WidgetsBinding.instance.addPostFrameCallback((_) => context.setLocale(urlLocale));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
